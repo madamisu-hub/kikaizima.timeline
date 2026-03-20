@@ -20,18 +20,26 @@ h1 {
   margin: auto;
 }
 
+/* 時間ブロック */
+.time-block {
+  margin-bottom: 20px;
+}
+
+/* 時間見出し */
+.time-header {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* イベントカード */
 .event {
   background: white;
   border-radius: 10px;
-  padding: 12px;
-  margin: 10px 0;
+  padding: 10px;
+  margin: 5px 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.time {
-  font-weight: bold;
-  font-size: 14px;
-  color: #666;
 }
 
 .character {
@@ -40,7 +48,6 @@ h1 {
   border-radius: 6px;
   color: white;
   font-size: 12px;
-  margin: 5px 0;
 }
 
 .location {
@@ -48,8 +55,9 @@ h1 {
   color: #888;
 }
 
-.action {
-  margin-top: 5px;
+.details {
+  font-size: 12px;
+  color: #555;
 }
 
 .important {
@@ -70,46 +78,87 @@ fetch('data.json')
 
   const container = document.getElementById('timeline');
 
+  // キャラ色
   const colorMap = {};
   data.characters.forEach(c => {
     colorMap[c.name] = c.color;
   });
 
-  data.events.sort((a,b) => a.time.localeCompare(b.time));
+  const colorMapCSS = {
+    "bg-red-500":"#ef4444",
+    "bg-blue-500":"#3b82f6",
+    "bg-yellow-500":"#eab308",
+    "bg-orange-500":"#f97316",
+    "bg-green-500":"#22c55e",
+    "bg-purple-500":"#a855f7",
+    "bg-gray-500":"#6b7280"
+  };
 
-  data.events.forEach(event => {
+  // 時間変換関数
+  function convertTime(time) {
+    let [h, m] = time.split(':').map(Number);
 
-    const div = document.createElement('div');
-    div.className = 'event';
-
-    if(event.isImportant) {
-      div.classList.add('important');
+    if (h < 6) {  // 深夜扱い（調整OK）
+      h += 24;
     }
 
-    const colorClass = colorMap[event.character] || "bg-gray-500";
+    return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
+  }
 
-    const colorMapCSS = {
-      "bg-red-500":"#ef4444",
-      "bg-blue-500":"#3b82f6",
-      "bg-yellow-500":"#eab308",
-      "bg-orange-500":"#f97316",
-      "bg-green-500":"#22c55e",
-      "bg-purple-500":"#a855f7",
-      "bg-gray-500":"#6b7280"
-    };
+  // グループ化
+  const groups = {};
 
-    const color = colorMapCSS[colorClass] || "#999";
+  data.events.forEach(event => {
+    const newTime = convertTime(event.time);
 
-    div.innerHTML = `
-      <div class="time">${event.time}</div>
-      <div class="character" style="background:${color}">
-        ${event.character}
-      </div>
-      <div class="location">${event.location}</div>
-      <div class="action">${event.action}</div>
-    `;
+    if (!groups[newTime]) {
+      groups[newTime] = [];
+    }
 
-    container.appendChild(div);
+    groups[newTime].push(event);
+  });
+
+  // 時間順ソート
+  const sortedTimes = Object.keys(groups).sort();
+
+  sortedTimes.forEach(time => {
+
+    const block = document.createElement('div');
+    block.className = 'time-block';
+
+    // 時間ヘッダー
+    const header = document.createElement('div');
+    header.className = 'time-header';
+    header.textContent = time;
+
+    block.appendChild(header);
+
+    // 各イベント
+    groups[time].forEach(event => {
+
+      const div = document.createElement('div');
+      div.className = 'event';
+
+      if(event.isImportant) {
+        div.classList.add('important');
+      }
+
+      const colorClass = colorMap[event.character] || "bg-gray-500";
+      const color = colorMapCSS[colorClass] || "#999";
+
+      div.innerHTML = `
+        <div class="character" style="background:${color}">
+          ${event.character}
+        </div>
+        <div class="location">${event.location}</div>
+        <div>${event.action}</div>
+        <div class="details">${event.details || ''}</div>
+      `;
+
+      block.appendChild(div);
+    });
+
+    container.appendChild(block);
   });
 
 });
