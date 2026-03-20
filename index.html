@@ -19,31 +19,27 @@ h1 {
   text-align: center;
 }
 
-/* ナビ */
-#time-nav, #char-filter {
+/* フィルター＆ナビ */
+#char-filter, #time-nav {
   max-width: 600px;
   margin: 10px auto;
   text-align: center;
 }
 
-#time-nav a, #char-filter button {
+#char-filter button, #time-nav a {
   display: inline-block;
   margin: 3px;
   padding: 5px 8px;
   border-radius: 5px;
-  text-decoration: none;
   font-size: 12px;
   cursor: pointer;
   border: none;
+  text-decoration: none;
 }
 
 #time-nav a {
   background: #ddd;
   color: #333;
-}
-
-#char-filter button {
-  color: white;
 }
 
 /* タイムライン */
@@ -69,12 +65,24 @@ h1 {
   margin-bottom: 25px;
 }
 
+.time-block::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: #666;
+  border-radius: 50%;
+}
+
 .time-header {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 8px;
 }
 
+/* イベント */
 .event {
   background: white;
   border-radius: 10px;
@@ -101,9 +109,15 @@ h1 {
   color: #555;
 }
 
-/* 全体イベント */
+/* ⭐ 重要イベント */
+.important {
+  border-left: 5px solid red;
+  background: #fff5f5;
+}
+
+/* ⭐ 全体イベント（黒） */
 .time-event {
-  background: #333;
+  background: #222;
   color: white;
   border-left: 5px solid #000;
   font-weight: bold;
@@ -153,20 +167,19 @@ fetch('data.json')
     "bg-gray-500":"#6b7280"
   };
 
-  // フィルター生成
+  // フィルター
   let activeCharacter = "ALL";
 
-  // 全体ボタン
   const allBtn = document.createElement('button');
   allBtn.textContent = "全表示";
   allBtn.style.background = "#444";
+  allBtn.style.color = "white";
   allBtn.onclick = () => {
     activeCharacter = "ALL";
     updateFilter();
   };
   filter.appendChild(allBtn);
 
-  // キャラボタン
   data.characters.forEach(c => {
     const btn = document.createElement('button');
     btn.textContent = c.name;
@@ -189,7 +202,6 @@ fetch('data.json')
       if (activeCharacter === "ALL") {
         e.style.display = "block";
       } else {
-        // 全体は常に表示
         if (char === activeCharacter || char === "全体") {
           e.style.display = "block";
         } else {
@@ -199,6 +211,7 @@ fetch('data.json')
     });
   }
 
+  // 時間変換
   function convertTime(time) {
     let [h, m] = time.split(':').map(Number);
     if (h < 6) h += 24;
@@ -226,7 +239,7 @@ fetch('data.json')
     nav.appendChild(link);
   });
 
-  // タイムライン生成
+  // タイムライン
   sortedTimes.forEach(time => {
 
     const block = document.createElement('div');
@@ -249,13 +262,16 @@ fetch('data.json')
 
         const div = document.createElement('div');
         div.className = 'event';
-        if(event.isImportant) {
-  div.classList.add('important');
-}
         div.setAttribute('data-character', event.character);
 
+        // ⭐ 全体イベント
         if(event.character === "全体") {
           div.classList.add('time-event');
+        }
+
+        // ⭐ 重要イベント（復活）
+        if(event.isImportant) {
+          div.classList.add('important');
         }
 
         const colorClass = colorMap[event.character] || "bg-gray-500";
