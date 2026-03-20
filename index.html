@@ -20,25 +20,30 @@ h1 {
 }
 
 /* ナビ */
-#time-nav {
+#time-nav, #char-filter {
   max-width: 600px;
-  margin: 10px auto 20px;
+  margin: 10px auto;
   text-align: center;
 }
 
-#time-nav a {
+#time-nav a, #char-filter button {
   display: inline-block;
   margin: 3px;
   padding: 5px 8px;
-  background: #ddd;
   border-radius: 5px;
   text-decoration: none;
-  color: #333;
   font-size: 12px;
+  cursor: pointer;
+  border: none;
 }
 
-#time-nav a:hover {
-  background: #bbb;
+#time-nav a {
+  background: #ddd;
+  color: #333;
+}
+
+#char-filter button {
+  color: white;
 }
 
 /* タイムライン */
@@ -64,24 +69,12 @@ h1 {
   margin-bottom: 25px;
 }
 
-.time-block::before {
-  content: "";
-  position: absolute;
-  left: -22px;
-  top: 5px;
-  width: 10px;
-  height: 10px;
-  background: #666;
-  border-radius: 50%;
-}
-
 .time-header {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 8px;
 }
 
-/* イベント */
 .event {
   background: white;
   border-radius: 10px;
@@ -108,11 +101,7 @@ h1 {
   color: #555;
 }
 
-.important {
-  border-left: 5px solid red;
-}
-
-/* 全体イベント（黒） */
+/* 全体イベント */
 .time-event {
   background: #333;
   color: white;
@@ -131,7 +120,10 @@ h1 {
 
 <h1>タイムライン</h1>
 
-<!-- ジャンプナビ -->
+<!-- 人物フィルター -->
+<div id="char-filter"></div>
+
+<!-- 時間ジャンプ -->
 <div id="time-nav"></div>
 
 <div class="timeline" id="timeline"></div>
@@ -143,8 +135,9 @@ fetch('data.json')
 
   const container = document.getElementById('timeline');
   const nav = document.getElementById('time-nav');
+  const filter = document.getElementById('char-filter');
 
-  // キャラ色
+  // 色マップ
   const colorMap = {};
   data.characters.forEach(c => {
     colorMap[c.name] = c.color;
@@ -160,28 +153,69 @@ fetch('data.json')
     "bg-gray-500":"#6b7280"
   };
 
-  // 時間変換
+  // フィルター生成
+  let activeCharacter = "ALL";
+
+  // 全体ボタン
+  const allBtn = document.createElement('button');
+  allBtn.textContent = "全表示";
+  allBtn.style.background = "#444";
+  allBtn.onclick = () => {
+    activeCharacter = "ALL";
+    updateFilter();
+  };
+  filter.appendChild(allBtn);
+
+  // キャラボタン
+  data.characters.forEach(c => {
+    const btn = document.createElement('button');
+    btn.textContent = c.name;
+
+    const color = colorMapCSS[c.color] || "#999";
+    btn.style.background = color;
+
+    btn.onclick = () => {
+      activeCharacter = c.name;
+      updateFilter();
+    };
+
+    filter.appendChild(btn);
+  });
+
+  function updateFilter() {
+    document.querySelectorAll('.event').forEach(e => {
+      const char = e.getAttribute('data-character');
+
+      if (activeCharacter === "ALL") {
+        e.style.display = "block";
+      } else {
+        // 全体は常に表示
+        if (char === activeCharacter || char === "全体") {
+          e.style.display = "block";
+        } else {
+          e.style.display = "none";
+        }
+      }
+    });
+  }
+
   function convertTime(time) {
     let [h, m] = time.split(':').map(Number);
     if (h < 6) h += 24;
     return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`;
   }
 
-  // グループ化
   const groups = {};
 
   data.events.forEach(event => {
     const newTime = convertTime(event.time);
-    if (!groups[newTime]) {
-      groups[newTime] = [];
-    }
+    if (!groups[newTime]) groups[newTime] = [];
     groups[newTime].push(event);
   });
 
-  // ソート
   const sortedTimes = Object.keys(groups).sort();
 
-  // ナビ生成
+  // ナビ
   sortedTimes.forEach(time => {
     const link = document.createElement('a');
     const safeId = "time-" + time.replace(":", "-");
@@ -197,9 +231,7 @@ fetch('data.json')
 
     const block = document.createElement('div');
     block.className = 'time-block';
-
-    const safeId = "time-" + time.replace(":", "-");
-    block.id = safeId;
+    block.id = "time-" + time.replace(":", "-");
 
     const header = document.createElement('div');
     header.className = 'time-header';
@@ -207,7 +239,6 @@ fetch('data.json')
 
     block.appendChild(header);
 
-    // 並び替え（全体を上に）
     groups[time]
       .sort((a, b) => {
         if (a.character === "全体") return -1;
@@ -218,25 +249,22 @@ fetch('data.json')
 
         const div = document.createElement('div');
         div.className = 'event';
+        div.setAttribute('data-character', event.character);
 
         if(event.character === "全体") {
           div.classList.add('time-event');
         }
 
-        if(event.isImportant) {
-          div.classList.add('important');
-        }
-
         const colorClass = colorMap[event.character] || "bg-gray-500";
         const color = colorMapCSS[colorClass] || "#999";
 
-        const characterLabel = event.character === "全体"
+        const label = event.character === "全体"
           ? "全体情報"
           : event.character;
 
         div.innerHTML = `
           <div class="character" style="background:${color}">
-            ${characterLabel}
+            ${label}
           </div>
           <div class="location">${event.location}</div>
           <div>${event.action}</div>
