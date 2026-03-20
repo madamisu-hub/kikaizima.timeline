@@ -57,7 +57,7 @@
       "location": "バーテン【倉光】の部屋",
       "action": "閉まっているはずの博士の研究室の窓からカーテンが大きく揺れるのを目撃",
       "details": "",
-      "isImportant": false,
+      "isImportant": true,
       "createdAt": 1773988158912
     },
     {
@@ -77,7 +77,7 @@
       "location": "キッチン",
       "action": "上の階でバタバタ音が鳴っているのを聞く",
       "details": "",
-      "isImportant": false,
+      "isImportant": true,
       "createdAt": 1774005754806
     },
     {
@@ -761,5 +761,5 @@
       "color": "bg-gray-500"
     }
   ],
-  "exportedAt": "2026-03-20T11:22:53.646Z"
+  "exportedAt": "2026-03-20T11:51:57.423Z"
 }
