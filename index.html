@@ -249,6 +249,9 @@ fetch('data.json')
 
         const div = document.createElement('div');
         div.className = 'event';
+        if(event.isImportant) {
+  div.classList.add('important');
+}
         div.setAttribute('data-character', event.character);
 
         if(event.character === "全体") {
