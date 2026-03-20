@@ -4,7 +4,7 @@
       "id": "1773987716777",
       "time": "00:00",
       "character": "全体",
-      "location": "機会島",
+      "location": "機械島",
       "action": "雨が降り始める",
       "details": "",
       "isImportant": false,
@@ -94,7 +94,7 @@
       "id": "1773988251483",
       "time": "00:30",
       "character": "全体",
-      "location": "機会島",
+      "location": "機械島",
       "action": "雨が止む",
       "details": "",
       "isImportant": false,
@@ -314,8 +314,8 @@
       "id": "1773928981704",
       "time": "18:00",
       "character": "探偵【時田】",
-      "location": "機会島",
-      "action": "機会島に到着・水上をデートに誘おうとするが断られる",
+      "location": "機械島",
+      "action": "機械島に到着・水上をデートに誘おうとするが断られる",
       "details": "",
       "isImportant": false,
       "createdAt": 1773928981704
@@ -324,7 +324,7 @@
       "id": "1773984128192",
       "time": "18:00",
       "character": "軍人【安本】",
-      "location": "機会島",
+      "location": "機械島",
       "action": "上総に話しかけられ、博士はこの島が出来てから屋敷を引っ越したことを教える・水上に質問する",
       "details": "",
       "isImportant": false,
@@ -334,7 +334,7 @@
       "id": "1773984391735",
       "time": "18:00",
       "character": "メイド【水上】",
-      "location": "機会島",
+      "location": "機械島",
       "action": "時田のデートの誘いをかわし、安本の’’博士にいつ会えるかという’’質問に明日の午後と答える",
       "details": "",
       "isImportant": false,
@@ -344,8 +344,8 @@
       "id": "1773986898137",
       "time": "18:00",
       "character": "バーテン【倉光】",
-      "location": "機会島",
-      "action": "機会島に到着・包丁をしっかり握り日暮を探すが発見できず",
+      "location": "機械島",
+      "action": "機械島に到着・包丁をしっかり握り日暮を探すが発見できず",
       "details": "",
       "isImportant": false,
       "createdAt": 1773986898137
@@ -354,8 +354,8 @@
       "id": "1773990877754",
       "time": "18:00",
       "character": "民俗学者【上総】",
-      "location": "機会島",
-      "action": "機会島に到着・安本へ話しかける",
+      "location": "機械島",
+      "action": "機械島に到着・安本へ話しかける",
       "details": "",
       "isImportant": false,
       "createdAt": 1773990877754
@@ -364,8 +364,8 @@
       "id": "1773992989908",
       "time": "18:00",
       "character": "元舞台女優【汀目】",
-      "location": "機会島",
-      "action": "機会島に到着する",
+      "location": "機械島",
+      "action": "機械島に到着する",
       "details": "",
       "isImportant": false,
       "createdAt": 1773992989908
@@ -751,5 +751,5 @@
       "color": "bg-gray-500"
     }
   ],
-  "exportedAt": "2026-03-20T13:31:59.415Z"
+  "exportedAt": "2026-03-20T14:07:05.688Z"
 }
