@@ -5,6 +5,10 @@
 <title>タイムライン</title>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
   background: #f5f5f5;
@@ -15,6 +19,29 @@ h1 {
   text-align: center;
 }
 
+/* ナビ */
+#time-nav {
+  max-width: 600px;
+  margin: 10px auto 20px;
+  text-align: center;
+}
+
+#time-nav a {
+  display: inline-block;
+  margin: 3px;
+  padding: 5px 8px;
+  background: #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+}
+
+#time-nav a:hover {
+  background: #bbb;
+}
+
+/* タイムライン */
 .timeline {
   max-width: 600px;
   margin: auto;
@@ -22,7 +49,6 @@ h1 {
   padding-left: 30px;
 }
 
-/* 縦線 */
 .timeline::before {
   content: "";
   position: absolute;
@@ -33,13 +59,11 @@ h1 {
   background: #ccc;
 }
 
-/* 時間ブロック */
 .time-block {
   position: relative;
   margin-bottom: 25px;
 }
 
-/* 丸 */
 .time-block::before {
   content: "";
   position: absolute;
@@ -51,7 +75,6 @@ h1 {
   border-radius: 50%;
 }
 
-/* 時間 */
 .time-header {
   font-weight: bold;
   font-size: 18px;
@@ -67,7 +90,6 @@ h1 {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* キャラ */
 .character {
   display: inline-block;
   padding: 3px 8px;
@@ -76,25 +98,22 @@ h1 {
   font-size: 12px;
 }
 
-/* 場所 */
 .location {
   font-size: 12px;
   color: #888;
 }
 
-/* 詳細 */
 .details {
   font-size: 12px;
   color: #555;
 }
 
-/* 重要 */
 .important {
   border-left: 5px solid red;
 }
 
-/* ⭐ 全体イベント用（追加部分） */
-  .time-event {
+/* 全体イベント（黒） */
+.time-event {
   background: #333;
   color: white;
   border-left: 5px solid #000;
@@ -111,6 +130,10 @@ h1 {
 <body>
 
 <h1>タイムライン</h1>
+
+<!-- ジャンプナビ -->
+<div id="time-nav"></div>
+
 <div class="timeline" id="timeline"></div>
 
 <script>
@@ -119,6 +142,7 @@ fetch('data.json')
 .then(data => {
 
   const container = document.getElementById('timeline');
+  const nav = document.getElementById('time-nav');
 
   // キャラ色
   const colorMap = {};
@@ -157,10 +181,25 @@ fetch('data.json')
   // ソート
   const sortedTimes = Object.keys(groups).sort();
 
+  // ナビ生成
+  sortedTimes.forEach(time => {
+    const link = document.createElement('a');
+    const safeId = "time-" + time.replace(":", "-");
+
+    link.href = "#" + safeId;
+    link.textContent = time;
+
+    nav.appendChild(link);
+  });
+
+  // タイムライン生成
   sortedTimes.forEach(time => {
 
     const block = document.createElement('div');
     block.className = 'time-block';
+
+    const safeId = "time-" + time.replace(":", "-");
+    block.id = safeId;
 
     const header = document.createElement('div');
     header.className = 'time-header';
@@ -168,7 +207,7 @@ fetch('data.json')
 
     block.appendChild(header);
 
-    // ⭐ ここが今回のメイン修正
+    // 並び替え（全体を上に）
     groups[time]
       .sort((a, b) => {
         if (a.character === "全体") return -1;
@@ -180,7 +219,6 @@ fetch('data.json')
         const div = document.createElement('div');
         div.className = 'event';
 
-        // ⭐ 全体イベント強調
         if(event.character === "全体") {
           div.classList.add('time-event');
         }
@@ -192,7 +230,6 @@ fetch('data.json')
         const colorClass = colorMap[event.character] || "bg-gray-500";
         const color = colorMapCSS[colorClass] || "#999";
 
-        // ⭐ 表示名変更
         const characterLabel = event.character === "全体"
           ? "全体情報"
           : event.character;
