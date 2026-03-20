@@ -1,14 +1,24 @@
 {
   "events": [
     {
-      "id": "1773930941235",
+      "id": "1773987716777",
       "time": "00:00",
       "character": "全体",
-      "location": "",
-      "action": "【注意】ツールの使用上０時始まりですが、シナリオ内では夕方～深夜という時間経過です",
+      "location": "機会島",
+      "action": "雨が降り始める",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987716777
+    },
+    {
+      "id": "1773994034722",
+      "time": "00:00",
+      "character": "元舞台女優【汀目】",
+      "location": "研究室",
+      "action": "耐え切れず博士の研究室に行き秘薬について相談する・誤って隠し部屋を開けてしまい博士が人体実験をしていることに気づく",
       "details": "",
       "isImportant": true,
-      "createdAt": 1773930941235
+      "createdAt": 1773994034722
     },
     {
       "id": "1773930362712",
@@ -21,11 +31,91 @@
       "createdAt": 1773930362712
     },
     {
+      "id": "1773987891499",
+      "time": "00:10",
+      "character": "バーテン【倉光】",
+      "location": "屋敷入口",
+      "action": "雨が降ってきたので急いで屋敷に戻る・屋敷に入り口で上総が立っているのを視認",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987891499
+    },
+    {
+      "id": "1773991684678",
+      "time": "00:10",
+      "character": "民俗学者【上総】",
+      "location": "屋敷入口",
+      "action": "雨に打たれながら考え事をする・倉光が屋敷に戻るのを視認",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773991684678
+    },
+    {
+      "id": "1773988158912",
+      "time": "00:15",
+      "character": "バーテン【倉光】",
+      "location": "バーテン【倉光】の部屋",
+      "action": "閉まっているはずの博士の研究室の窓からカーテンが大きく揺れるのを目撃",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773988158912
+    },
+    {
+      "id": "1773994139467",
+      "time": "00:15",
+      "character": "元舞台女優【汀目】",
+      "location": "研究室",
+      "action": "博士に襲われるがメスで反撃し、博士を殺してしまう・机上にあった瓶詰の薬を盗み部屋に戻る",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773994139467
+    },
+    {
+      "id": "1773985838349",
+      "time": "00:30",
+      "character": "軍人【安本】",
+      "location": "研究室前",
+      "action": "ノックをするが博士からの返事は無い為客室に帰ろうとする",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773985838349
+    },
+    {
+      "id": "1773988251483",
+      "time": "00:30",
+      "character": "全体",
+      "location": "機会島",
+      "action": "雨が止む",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773988251483
+    },
+    {
+      "id": "1773988310254",
+      "time": "00:30",
+      "character": "バーテン【倉光】",
+      "location": "バーテン【倉光】の部屋",
+      "action": "身体を温めるべく暖炉のある客間に向かう",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773988310254
+    },
+    {
+      "id": "1773992116596",
+      "time": "00:40",
+      "character": "民俗学者【上総】",
+      "location": "研究室",
+      "action": "再度研究室に向かい博士が死んでいるのを発見する・メスと隠し部屋への入り口を見つけ実験の被害者であろう男性を発見する・試作品を投与した生物が大きな黒岩のようになっているのを見て博士の遺体を天狗石の伝承になぞらえることを考える",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773992116596
+    },
+    {
       "id": "1773931343085",
       "time": "00:45",
       "character": "探偵【時田】",
       "location": "探偵【時田】の部屋",
-      "action": "水上が帰ってこないので自分の部屋に戻る・ワインを零す？(泥酔中)",
+      "action": "水上が帰ってこないので自分の部屋に戻る・ワインを零す(泥酔中)",
       "details": "",
       "isImportant": false,
       "createdAt": 1773931343085
@@ -41,6 +131,16 @@
       "createdAt": 1773971794514
     },
     {
+      "id": "1773994289708",
+      "time": "00:45",
+      "character": "元舞台女優【汀目】",
+      "location": "客間",
+      "action": "不安や後悔から１人でいることができず客間に向かう・後から来た倉光や安本と会話する",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773994289708
+    },
+    {
       "id": "1773971906167",
       "time": "00:50",
       "character": "メイド【水上】",
@@ -51,14 +151,44 @@
       "createdAt": 1773971906167
     },
     {
+      "id": "1773988606733",
+      "time": "00:50",
+      "character": "バーテン【倉光】",
+      "location": "客間",
+      "action": "汀目と後から来た安本と３人で会話をする・汀目に落ち着きがない様子や安本の腕に新しい傷ができていることに気づく",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773988606733
+    },
+    {
       "id": "1773931479748",
       "time": "01:00",
       "character": "探偵【時田】",
       "location": "探偵【時田】の部屋",
-      "action": "遠くで何かが落ちる音が聞こえる",
+      "action": "遠くで何かが落ちる音を聞く",
       "details": "",
-      "isImportant": false,
+      "isImportant": true,
       "createdAt": 1773931479748
+    },
+    {
+      "id": "1773986073798",
+      "time": "01:00",
+      "character": "軍人【安本】",
+      "location": "客間",
+      "action": "寒かったので客間に向かう・途中で重いものが落ちる音を聞く・汀目と倉光の会話に混ざる",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773986073798
+    },
+    {
+      "id": "1773992354876",
+      "time": "01:00",
+      "character": "民俗学者【上総】",
+      "location": "研究室",
+      "action": "博士の遺体を窓から放り出す・実験体の指を切り取り、試作品を注入してから博士の上に放り投げ伝承を再現する・血を掃除し研究室を後にする",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773992354876
     },
     {
       "id": "1773931513327",
@@ -81,6 +211,16 @@
       "createdAt": 1773972217807
     },
     {
+      "id": "1773986193060",
+      "time": "01:30",
+      "character": "軍人【安本】",
+      "location": "研究室前",
+      "action": "話の途中で抜け、研究室に再度向かう・ノックをするが返事が無いので客間に戻る",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773986193060
+    },
+    {
       "id": "1773931735347",
       "time": "01:55",
       "character": "探偵【時田】",
@@ -95,7 +235,7 @@
       "time": "01:55",
       "character": "メイド【水上】",
       "location": "屋敷入口",
-      "action": "岩下にいる死体の顔をハンカチで拭い、博士だと気づく・時田が来たので岩の陰に隠れる",
+      "action": "死体を発見する・岩下にいる死体の顔をハンカチで拭い、博士だと気づく・時田が来たので岩の陰に隠れる",
       "details": "",
       "isImportant": false,
       "createdAt": 1773972415411
@@ -109,6 +249,56 @@
       "details": "",
       "isImportant": true,
       "createdAt": 1773932021035
+    },
+    {
+      "id": "1773986334620",
+      "time": "02:00",
+      "character": "軍人【安本】",
+      "location": "屋敷入口",
+      "action": "時田から死体があることを知り、坂上源三が死んでいるのを発見・死体を見た時に’’俺は一体どうしたら…’’と口に出してしまう",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773986334620
+    },
+    {
+      "id": "1773986542082",
+      "time": "02:00",
+      "character": "メイド【水上】",
+      "location": "屋敷入口",
+      "action": "こっそりと屋敷に戻り、皆に合流する",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773986542082
+    },
+    {
+      "id": "1773988833239",
+      "time": "02:00",
+      "character": "バーテン【倉光】",
+      "location": "屋敷入口",
+      "action": "時田から死体があることを知り、坂上源三が死んでいるのを発見",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773988833239
+    },
+    {
+      "id": "1773992802042",
+      "time": "02:00",
+      "character": "民俗学者【上総】",
+      "location": "民俗学者【上総】の部屋",
+      "action": "時田が迎えに来て、死体が発見されたことを確認する",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773992802042
+    },
+    {
+      "id": "1773994514612",
+      "time": "02:00",
+      "character": "元舞台女優【汀目】",
+      "location": "屋敷入口",
+      "action": "時田に死体があることを告げられ向かうが、場所や様子が変わっていることに焦る・安本のつぶやきを聞く",
+      "details": "",
+      "isImportant": true,
+      "createdAt": 1773994514612
     },
     {
       "id": "1773932223705",
@@ -125,10 +315,60 @@
       "time": "18:00",
       "character": "探偵【時田】",
       "location": "機会島",
-      "action": "機会島に到着、水上をデートに誘おうとするが断られる",
+      "action": "機会島に到着・水上をデートに誘おうとするが断られる",
       "details": "",
       "isImportant": false,
       "createdAt": 1773928981704
+    },
+    {
+      "id": "1773984128192",
+      "time": "18:00",
+      "character": "軍人【安本】",
+      "location": "機会島",
+      "action": "上総に話しかけられ、博士はこの島が出来てから屋敷を引っ越したことを教える・水上に質問する",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773984128192
+    },
+    {
+      "id": "1773984391735",
+      "time": "18:00",
+      "character": "メイド【水上】",
+      "location": "機会島",
+      "action": "時田のデートの誘いをかわし、安本の’’博士にいつ会えるかという’’質問に明日の午後と答える",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773984391735
+    },
+    {
+      "id": "1773986898137",
+      "time": "18:00",
+      "character": "バーテン【倉光】",
+      "location": "機会島",
+      "action": "機会島に到着・包丁をしっかり握り日暮を探すが発見できず",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773986898137
+    },
+    {
+      "id": "1773990877754",
+      "time": "18:00",
+      "character": "民俗学者【上総】",
+      "location": "機会島",
+      "action": "機会島に到着・安本へ話しかける",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773990877754
+    },
+    {
+      "id": "1773992989908",
+      "time": "18:00",
+      "character": "元舞台女優【汀目】",
+      "location": "機会島",
+      "action": "機会島に到着する",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773992989908
     },
     {
       "id": "1773932447201",
@@ -145,7 +385,7 @@
       "time": "19:00",
       "character": "全体",
       "location": "客間",
-      "action": "食事会が始まる",
+      "action": "水上以外で食事会を始める",
       "details": "",
       "isImportant": false,
       "createdAt": 1773929262591
@@ -154,21 +394,61 @@
       "id": "1773932748230",
       "time": "19:00",
       "character": "メイド【水上】",
-      "location": "キッチン",
+      "location": "客間",
       "action": "皆に坂上博士が明日の午後に挨拶をすること・お風呂が壊れていることを伝える",
       "details": "",
       "isImportant": false,
       "createdAt": 1773932748230
     },
     {
+      "id": "1773987083735",
+      "time": "19:00",
+      "character": "バーテン【倉光】",
+      "location": "客間",
+      "action": "食事中博士と絵恋の写真を見つけにらみつける・時田が赤ワイン一本を開けるのを視認",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987083735
+    },
+    {
       "id": "1773932865750",
       "time": "20:00",
       "character": "メイド【水上】",
       "location": "客間",
-      "action": "上総が部屋に戻るのを確認",
+      "action": "上総が部屋に戻るのを視認",
       "details": "",
       "isImportant": false,
       "createdAt": 1773932865750
+    },
+    {
+      "id": "1773987255047",
+      "time": "20:00",
+      "character": "バーテン【倉光】",
+      "location": "客間",
+      "action": "汀目に話しかけられる・汀目の年齢に関する愚痴に’’そんなこと事無いです、素敵ですよ’’と正直な感想を述べる",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987255047
+    },
+    {
+      "id": "1773990960308",
+      "time": "20:00",
+      "character": "元舞台女優【汀目】",
+      "location": "客間",
+      "action": "倉光に話しかける・褒められ照れる",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773990960308
+    },
+    {
+      "id": "1773993370880",
+      "time": "20:00",
+      "character": "民俗学者【上総】",
+      "location": "客間",
+      "action": "先に食べ終わったので部屋に戻る",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773993370880
     },
     {
       "id": "1773929325140",
@@ -179,6 +459,26 @@
       "details": "",
       "isImportant": false,
       "createdAt": 1773929325140
+    },
+    {
+      "id": "1773984598471",
+      "time": "20:30",
+      "character": "軍人【安本】",
+      "location": "客間",
+      "action": "時田が客間から出ていくのを視認",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773984598471
+    },
+    {
+      "id": "1773991062255",
+      "time": "20:30",
+      "character": "民俗学者【上総】",
+      "location": "民俗学者【上総】",
+      "action": "レポートをまとめる・坂上博士に話を聞こうと考える",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773991062255
     },
     {
       "id": "1773929459855",
@@ -201,6 +501,46 @@
       "createdAt": 1773933028296
     },
     {
+      "id": "1773984786155",
+      "time": "21:00",
+      "character": "軍人【安本】",
+      "location": "客間",
+      "action": "汀目に酒の勢いで’’過去に重大な過ちを犯してしまった’’と話す",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773984786155
+    },
+    {
+      "id": "1773993609655",
+      "time": "21:00",
+      "character": "元舞台女優【汀目】",
+      "location": "客間",
+      "action": "食事会後、安本と話す・安本の懺悔を聞き慰める",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773993609655
+    },
+    {
+      "id": "1773987303207",
+      "time": "21:10",
+      "character": "バーテン【倉光】",
+      "location": "キッチン",
+      "action": "水上の皿洗いを手伝う",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987303207
+    },
+    {
+      "id": "1773991230681",
+      "time": "21:30",
+      "character": "民俗学者【上総】",
+      "location": "研究室",
+      "action": "ノックをせず扉を開け、博士に巨人伝説について聞こうとする・言い争いの末研究室を追い出される",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773991230681
+    },
+    {
       "id": "1773933287230",
       "time": "21:40",
       "character": "メイド【水上】",
@@ -215,10 +555,20 @@
       "time": "21:55",
       "character": "メイド【水上】",
       "location": "研究室前",
-      "action": "博士と誰かの言い争っていたので隠れて待つ",
+      "action": "博士と誰かが言い争っていたので隠れて待つ",
       "details": "",
       "isImportant": false,
       "createdAt": 1773971481856
+    },
+    {
+      "id": "1773984949143",
+      "time": "21:55",
+      "character": "軍人【安本】",
+      "location": "浴場",
+      "action": "お風呂にはいろうとするが鍵が閉まっているのを確認、壊れていることを思い出す",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773984949143
     },
     {
       "id": "1773929600159",
@@ -229,6 +579,36 @@
       "details": "",
       "isImportant": false,
       "createdAt": 1773929600159
+    },
+    {
+      "id": "1773985023747",
+      "time": "22:00",
+      "character": "軍人【安本】",
+      "location": "廊下",
+      "action": "自分の部屋に戻る途中で水上の部屋に誰かが入るのを目撃する",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773985023747
+    },
+    {
+      "id": "1773993748354",
+      "time": "22:00",
+      "character": "元舞台女優【汀目】",
+      "location": "元舞台女優【汀目の部屋】",
+      "action": "秘薬が気になり今夜中に行っては駄目か思い悩む",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773993748354
+    },
+    {
+      "id": "1773987426901",
+      "time": "22:20",
+      "character": "バーテン【倉光】",
+      "location": "バーテン【倉光】の部屋",
+      "action": "包丁を研いで坂上博士・日暮への復讐に心躍らす",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987426901
     },
     {
       "id": "1773929996905",
@@ -245,10 +625,20 @@
       "time": "23:00",
       "character": "メイド【水上】",
       "location": "研究室前",
-      "action": "博士と言い争っていた上総に詰められるが誤魔化す",
+      "action": "博士と言い争っていた上総に見つかり詰められるが誤魔化す",
       "details": "",
       "isImportant": false,
       "createdAt": 1773971572417
+    },
+    {
+      "id": "1773991284793",
+      "time": "23:00",
+      "character": "民俗学者【上総】",
+      "location": "研究室前",
+      "action": "研究室を出て部屋に戻る・隠れている水上に気が付き声をかける",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773991284793
     },
     {
       "id": "1773971727967",
@@ -261,6 +651,16 @@
       "createdAt": 1773971727967
     },
     {
+      "id": "1773985214349",
+      "time": "23:20",
+      "character": "軍人【安本】",
+      "location": "軍人【安本】の部屋",
+      "action": "絵恋のことを思い出し日誌に思いをぶつけようとするが日誌の紛失に気づく・後悔に耐え切れず腕をはさみで切る",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773985214349
+    },
+    {
       "id": "1773930154981",
       "time": "23:30",
       "character": "探偵【時田】",
@@ -269,6 +669,56 @@
       "details": "",
       "isImportant": false,
       "createdAt": 1773930154981
+    },
+    {
+      "id": "1773987599699",
+      "time": "23:30",
+      "character": "バーテン【倉光】",
+      "location": "バーテン【倉光】の部屋",
+      "action": "外を眺めていると対面の部屋にいる汀目と目が合い手を振り返す・外に出る準備を始める",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987599699
+    },
+    {
+      "id": "1773991593332",
+      "time": "23:30",
+      "character": "民俗学者【上総】",
+      "location": "民俗学者【上総】の部屋",
+      "action": "水上の部屋側からガン！と壁を打つような音を聞く",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773991593332
+    },
+    {
+      "id": "1773993874839",
+      "time": "23:30",
+      "character": "元舞台女優【汀目】",
+      "location": "元舞台女優【汀目の部屋】",
+      "action": "対面に部屋がある倉光と目が合い手を振る・その後カーテンが閉まり灯りが落ちるのを視認する",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773993874839
+    },
+    {
+      "id": "1773987672889",
+      "time": "23:45",
+      "character": "バーテン【倉光】",
+      "location": "外",
+      "action": "ランニングを始める・玄関の扉が開く音を聞く",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773987672889
+    },
+    {
+      "id": "1773985542577",
+      "time": "23:50",
+      "character": "軍人【安本】",
+      "location": "外",
+      "action": "煙草を吸いに外に行く・雨が降り出したので屋敷に戻る最中、坂上博士の研究室近くに人がいるのを目撃",
+      "details": "",
+      "isImportant": false,
+      "createdAt": 1773985542577
     }
   ],
   "characters": [
@@ -301,5 +751,5 @@
       "color": "bg-gray-500"
     }
   ],
-  "exportedAt": "2026-03-20T03:59:47.320Z"
+  "exportedAt": "2026-03-20T08:24:43.369Z"
 }
