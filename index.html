@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>タイムライン</title>
+<style>
+body { font-family: sans-serif; padding: 20px; }
+.event { border-bottom: 1px solid #ccc; padding: 10px 0; }
+.time { font-weight: bold; }
+.character { font-weight: bold; }
+.important { color: red; }
+</style>
+</head>
+<body>
+
+<h1>タイムライン</h1>
+<div id="timeline"></div>
+
+<script>
+fetch('data.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('timeline');
+
+    data.events.sort((a,b) => a.time.localeCompare(b.time));
+
+    data.events.forEach(event => {
+      const div = document.createElement('div');
+      div.className = 'event';
+
+      div.innerHTML = `
+        <div class="time">${event.time}</div>
+        <div class="character">${event.character}</div>
+        <div>${event.location}</div>
+        <div>${event.action}</div>
+        <div class="${event.isImportant ? 'important' : ''}">
+          ${event.isImportant ? '★重要' : ''}
+        </div>
+      `;
+
+      container.appendChild(div);
+    });
+  });
+</script>
+
+</body>
+</html>
